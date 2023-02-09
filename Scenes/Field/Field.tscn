@@ -1,0 +1,528 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Objects/Combine/Combine.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Clock/Clock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Field/Field.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Images/road.png" type="Texture" id=4]
+[ext_resource path="res://Objects/HUD/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Fence/Fence.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Field/Fade.gd" type="Script" id=7]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 19, 23 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2000, 2000 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3000, 3000 )
+
+[node name="Field" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -2072.0
+margin_top = -1200.0
+margin_right = 6928.0
+margin_bottom = 7800.0
+texture = SubResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 2944.0
+margin_right = 808.0
+margin_bottom = 3944.0
+rect_rotation = 90.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="SiloSpawn" type="Area2D" parent="."]
+position = Vector2( 3008, 3000 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SiloSpawn"]
+shape = SubResource( 3 )
+
+[node name="Soil" type="Area2D" parent="."]
+position = Vector2( 3008, 3000 )
+
+[node name="Shape" type="CollisionShape2D" parent="Soil"]
+shape = SubResource( 1 )
+
+[node name="Combine" parent="." instance=ExtResource( 1 )]
+position = Vector2( -472, 3352 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Clock" parent="UI" instance=ExtResource( 2 )]
+margin_left = 456.0
+margin_top = 8.0
+margin_right = -544.0
+margin_bottom = -1944.0
+
+[node name="HUD" parent="UI" instance=ExtResource( 5 )]
+margin_right = 208.0
+margin_bottom = 104.0
+
+[node name="Fences" type="Node" parent="."]
+
+[node name="Fence" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 104, -24 )
+
+[node name="Fence2" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 328, -24 )
+
+[node name="Fence3" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 544, -24 )
+
+[node name="Fence4" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 760, -32 )
+
+[node name="Fence5" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 976, -40 )
+
+[node name="Fence6" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1200, -32 )
+
+[node name="Fence7" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1408, -40 )
+
+[node name="Fence8" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1616, -32 )
+
+[node name="Fence9" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1824, -16 )
+
+[node name="Fence10" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2032, -16 )
+
+[node name="Fence18" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2248, -16 )
+
+[node name="Fence19" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2464, -24 )
+
+[node name="Fence20" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2688, -16 )
+
+[node name="Fence21" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2904, -32 )
+
+[node name="Fence22" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3104, -16 )
+
+[node name="Fence23" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3312, -40 )
+
+[node name="Fence24" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3512, -16 )
+
+[node name="Fence25" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3720, -32 )
+
+[node name="Fence26" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3928, -24 )
+
+[node name="Fence27" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4128, -24 )
+
+[node name="Fence28" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4336, -24 )
+
+[node name="Fence29" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4536, -24 )
+
+[node name="Fence30" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4752, -24 )
+
+[node name="Fence31" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4960, -32 )
+
+[node name="Fence32" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5168, -32 )
+
+[node name="Fence33" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5376, -24 )
+
+[node name="Fence34" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5576, -32 )
+
+[node name="Fence35" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5784, -24 )
+
+[node name="Fence36" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5992, -16 )
+
+[node name="Fence11" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6032, 104 )
+rotation = 1.5708
+
+[node name="Fence12" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 312 )
+rotation = 1.5708
+
+[node name="Fence13" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 520 )
+rotation = 1.5708
+
+[node name="Fence14" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 728 )
+rotation = 1.5708
+
+[node name="Fence15" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6032, 944 )
+rotation = 1.5708
+
+[node name="Fence16" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 1152 )
+rotation = 1.5708
+
+[node name="Fence17" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6032, 1360 )
+rotation = 1.5708
+
+[node name="Fence37" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 1560 )
+rotation = 1.5708
+
+[node name="Fence38" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 1768 )
+rotation = 1.5708
+
+[node name="Fence39" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 1968 )
+rotation = 1.5708
+
+[node name="Fence40" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 2176 )
+rotation = 1.5708
+
+[node name="Fence41" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 2384 )
+rotation = 1.5708
+
+[node name="Fence42" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6032, 2592 )
+rotation = 1.5708
+
+[node name="Fence43" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 2792 )
+rotation = 1.5708
+
+[node name="Fence44" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6024, 2992 )
+rotation = 1.5708
+
+[node name="Fence45" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 3200 )
+rotation = 1.5708
+
+[node name="Fence46" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6032, 3400 )
+rotation = 1.5708
+
+[node name="Fence47" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 3608 )
+rotation = 1.5708
+
+[node name="Fence48" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 3808 )
+rotation = 1.5708
+
+[node name="Fence49" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6056, 4016 )
+rotation = 1.5708
+
+[node name="Fence50" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 4216 )
+rotation = 1.5708
+
+[node name="Fence51" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6056, 4432 )
+rotation = 1.5708
+
+[node name="Fence52" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 4640 )
+rotation = 1.5708
+
+[node name="Fence53" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 4840 )
+rotation = 1.5708
+
+[node name="Fence54" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 5056 )
+rotation = 1.5708
+
+[node name="Fence55" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 5272 )
+rotation = 1.5708
+
+[node name="Fence56" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 5472 )
+rotation = 1.5708
+
+[node name="Fence57" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 5672 )
+rotation = 1.5708
+
+[node name="Fence58" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6040, 5880 )
+rotation = 1.5708
+
+[node name="Fence59" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 6048, 6088 )
+rotation = 1.5708
+
+[node name="Fence60" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5920, 6024 )
+
+[node name="Fence61" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5704, 6040 )
+
+[node name="Fence62" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5480, 6016 )
+
+[node name="Fence63" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5272, 6024 )
+
+[node name="Fence64" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 5064, 6040 )
+
+[node name="Fence65" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4840, 6048 )
+
+[node name="Fence66" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4632, 6024 )
+
+[node name="Fence67" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4424, 6040 )
+
+[node name="Fence68" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4224, 6024 )
+
+[node name="Fence69" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 4016, 6048 )
+
+[node name="Fence70" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3800, 6024 )
+
+[node name="Fence71" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3592, 6040 )
+
+[node name="Fence72" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3368, 6024 )
+
+[node name="Fence73" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 3160, 6032 )
+
+[node name="Fence74" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2936, 6016 )
+
+[node name="Fence75" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2728, 6040 )
+
+[node name="Fence76" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2520, 6024 )
+
+[node name="Fence77" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2320, 6048 )
+
+[node name="Fence78" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 2120, 6024 )
+
+[node name="Fence79" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1888, 6048 )
+
+[node name="Fence80" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1688, 6024 )
+
+[node name="Fence81" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1472, 6040 )
+
+[node name="Fence82" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1256, 6024 )
+
+[node name="Fence83" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 1040, 6040 )
+
+[node name="Fence84" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 832, 6024 )
+
+[node name="Fence85" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 624, 6040 )
+
+[node name="Fence86" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 416, 6032 )
+
+[node name="Fence87" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 208, 6024 )
+
+[node name="Fence88" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -8, 6032 )
+
+[node name="Fence89" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -32, 5912 )
+rotation = 1.5708
+
+[node name="Fence90" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -32, 5688 )
+rotation = 1.5708
+
+[node name="Fence91" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 5480 )
+rotation = 1.5708
+
+[node name="Fence92" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -32, 5272 )
+rotation = 1.5708
+
+[node name="Fence93" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 5064 )
+rotation = 1.5708
+
+[node name="Fence94" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 4856 )
+rotation = 1.5708
+
+[node name="Fence95" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 4656 )
+rotation = 1.5708
+
+[node name="Fence96" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -40, 4448 )
+rotation = 1.5708
+
+[node name="Fence97" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 4248 )
+rotation = 1.5708
+
+[node name="Fence98" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 4040 )
+rotation = 1.5708
+
+[node name="Fence99" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 3824 )
+rotation = 1.5708
+
+[node name="Fence100" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -144, 3736 )
+
+[node name="Fence101" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -360, 3736 )
+
+[node name="Fence102" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -568, 3728 )
+
+[node name="Fence103" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -784, 3744 )
+
+[node name="Fence104" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -992, 3720 )
+
+[node name="Fence105" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -1104, 3608 )
+rotation = 1.5708
+
+[node name="Fence106" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -1104, 3400 )
+rotation = 1.5708
+
+[node name="Fence107" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -1096, 3200 )
+rotation = 1.5708
+
+[node name="Fence108" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -1096, 2984 )
+rotation = 1.5708
+
+[node name="Fence109" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -976, 2880 )
+
+[node name="Fence110" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -760, 2872 )
+
+[node name="Fence111" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -544, 2880 )
+
+[node name="Fence112" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -336, 2888 )
+
+[node name="Fence113" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -120, 2896 )
+
+[node name="Fence114" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( 0, 2776 )
+rotation = 1.5708
+
+[node name="Fence115" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -8, 2560 )
+rotation = 1.5708
+
+[node name="Fence116" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -8, 2336 )
+rotation = 1.5708
+
+[node name="Fence117" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -16, 2120 )
+rotation = 1.5708
+
+[node name="Fence118" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -24, 1912 )
+rotation = 1.5708
+
+[node name="Fence119" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -16, 1704 )
+rotation = 1.5708
+
+[node name="Fence120" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -16, 1488 )
+rotation = 1.5708
+
+[node name="Fence121" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -8, 1272 )
+rotation = 1.5708
+
+[node name="Fence122" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -16, 1056 )
+rotation = 1.5708
+
+[node name="Fence123" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -8, 848 )
+rotation = 1.5708
+
+[node name="Fence124" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -16, 624 )
+rotation = 1.5708
+
+[node name="Fence125" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -16, 408 )
+rotation = 1.5708
+
+[node name="Fence126" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -8, 192 )
+rotation = 1.5708
+
+[node name="Fence127" parent="Fences" instance=ExtResource( 6 )]
+position = Vector2( -16, -16 )
+rotation = 1.5708
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+pause_mode = 2
+margin_left = -4416.0
+margin_top = -2144.0
+margin_right = 7912.0
+margin_bottom = 8008.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 7 )
+
+[connection signal="fill_hopper" from="Combine" to="." method="_on_Combine_fill_hopper"]
+[connection signal="fill_silo" from="Combine" to="." method="_on_Combine_fill_silo"]
+[connection signal="done" from="UI/Clock" to="." method="_on_Clock_done"]
+[connection signal="done" from="UI/Clock" to="CanvasLayer/Fade" method="_on_Clock_done"]
+
+[editable path="Combine"]

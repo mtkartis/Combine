@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/Combine/Combine.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Combine.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Combine/Cutter.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Images/Swather.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Combine/InteractSense.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Images/tile_0156.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/arrowBrown_left.png" type="Texture" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 120.0
+height = 60.0
+
+[node name="Combine" type="KinematicBody2D"]
+z_index = 5
+collision_layer = 8
+collision_mask = 5
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 148, -76.8 )
+polygon = PoolVector2Array( 48, -24, 32, -32, 16, -24, 8, 0, -32, 0, -56, -24, -368, -24, -368, 0, -480, 0, -496, 16, -496, 120, -464, 128, -376, 128, -376, 160, -56, 160, -48, 128, 8, 128, 16, 152, 32, 160, 48, 152, 64, 120, 64, 288, 104, 288, 104, 64, 104, -176, 64, -176, 64, 8 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = 1.5708
+rotating = true
+current = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -108, -12.8 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="Body" type="Area2D" parent="."]
+position = Vector2( 148, -20.8 )
+collision_layer = 8
+collision_mask = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+polygon = PoolVector2Array( -60, 76.8, -60, 53.1885, 44, 52.8, 44, -19.2, -60, -20.3328, -60, -43.2, -316, -43.2, -316, -35.2, -388, -35.2, -388, 60.8, -316, 60.8, -276, 76.8 )
+
+[node name="Cutter" type="Area2D" parent="."]
+position = Vector2( 148, -20.8 )
+collision_layer = 8
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cutter"]
+polygon = PoolVector2Array( 108, -235.2, 108, 236.8, 60, 236.8, 60, -235.2 )
+
+[node name="Sprite" type="Sprite" parent="Cutter"]
+position = Vector2( 84, 5.72205e-06 )
+scale = Vector2( 0.625, 2.25 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="InteractSense" type="Area2D" parent="."]
+position = Vector2( -352, -16 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractSense"]
+position = Vector2( 48, 0 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Image" type="Sprite" parent="InteractSense"]
+visible = false
+position = Vector2( 168, 16 )
+rotation = 1.5708
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="InteractSense"]
+wait_time = 0.75
+
+[node name="Compass" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+flip_h = true
+
+[connection signal="harvest" from="Cutter" to="." method="_on_Cutter_harvest"]
+[connection signal="timeout" from="InteractSense/Timer" to="InteractSense" method="_on_Timer_timeout"]

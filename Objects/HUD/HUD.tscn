@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Images/buttonLong_brown.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/Fredoka-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Objects/HUD/HUD.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="MarginContainer"]
+margin_right = 200.0
+margin_bottom = 96.0
+script = ExtResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 200.0
+margin_bottom = 96.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 190, 49 )
+patch_margin_left = 10
+patch_margin_top = 19
+patch_margin_right = 11
+patch_margin_bottom = 22
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_right = 190.0
+margin_bottom = 96.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Hopper" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 40.0
+size_flags_horizontal = 5
+custom_constants/separation = 0
+
+[node name="Crop" type="Label" parent="VBoxContainer/Hopper"]
+margin_right = 141.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
+text = "Combine: "
+align = 1
+valign = 1
+
+[node name="Amount" type="Label" parent="VBoxContainer/Hopper"]
+margin_left = 141.0
+margin_right = 180.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+custom_fonts/font = SubResource( 1 )
+text = "111"
+align = 1
+valign = 1
+
+[node name="Silo" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 40.0
+margin_right = 180.0
+margin_bottom = 80.0
+size_flags_horizontal = 5
+custom_constants/separation = 0
+
+[node name="Crop" type="Label" parent="VBoxContainer/Silo"]
+margin_right = 90.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
+text = "Silo: "
+align = 1
+valign = 1
+
+[node name="Amount" type="Label" parent="VBoxContainer/Silo"]
+margin_left = 90.0
+margin_right = 180.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+custom_fonts/font = SubResource( 1 )
+text = "111"
+align = 1
+valign = 1
